@@ -108,12 +108,15 @@
           }
         }
       },
-      toggle: function(inItem) {
-        if (this.contains(inItem)) {
-          this.remove(inItem);
-        } else {
+      toggleBy: function(inItem, inValue) {
+        if (inValue) {
           this.add(inItem);
+        } else {
+          this.remove(inItem);
         }
+      },
+      toggle: function(inItem) {
+        this.toggleBy(inItem, !this.contains(inItem));
       }
     }
   });
