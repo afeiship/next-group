@@ -1,7 +1,7 @@
 var nx = require('next-js-core2');
 var NxGroup = require('../src/next-group');
 
-test('test data group', () => {
+test('test data group api:add', () => {
   var dataGroup = new NxGroup('sex', (item) => {
     return 'tid_' + item.name + '_' + item.sex;
   });
@@ -16,17 +16,10 @@ test('test data group', () => {
   expect(dataGroup.items.length).toBe(6);
   expect(dataGroup.groups.length).toBe(2);
 
-  // remove:
-  dataGroup.remove({ name: 'a', sex: 'male' });
-  dataGroup.remove({ name: 'b', sex: 'male' });
-  dataGroup.remove({ name: 'e', sex: 'male' });
-  // expect(dataGroup.items.length).toBe(5);
-  // expect(dataGroup.groups.length).toBe(2);
+  //gid & tid:
+  expect(dataGroup.gid({ name: 'd', sex: 'female' })).toBe('female');
+  expect(dataGroup.tid({ name: 'd', sex: 'female' })).toBe('tid_d_female');
 
-  // dataGroup.remove({ name: 'e', sex: 'female' });
+  // console.log(dataGroup);
 
-  console.log(dataGroup);
-
-  // expect(dataGroup.items.length).toBe(5);
-  // expect(dataGroup.groups.length).toBe(2);
 });
