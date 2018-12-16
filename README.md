@@ -21,9 +21,12 @@ npm install -S afeiship/next-group
 
 ## usage:
 ```js
-var dataGroup = new NxGroup('sex', (item) => {
+import NxGroup from 'next-group';
+
+const dataGroup = new NxGroup('sex', (item) => {
     return 'tid_' + item.name + '_' + item.sex;
 });
+
 dataGroup.add({ name: 'a', sex: 'male' });
 dataGroup.add({ name: 'b', sex: 'male' });
 dataGroup.add({ name: 'c', sex: 'female' });
