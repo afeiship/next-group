@@ -7,17 +7,17 @@ npm install -S afeiship/next-group
 ```
 
 ## apis:
-| api          | args                            | description                                    |
-|--------------|---------------------------------|------------------------------------------------|
-| add          | item                            | add an item to group                           |
-| remove       | item                            | remove an item from group                      |
-| toggleBy     | item, value                     | toggle by the value [true: add; false: remove] |
-| toggle       | item                            | toggle the item                                |
-| gid          | item                            | get the item groupId                           |
-| tid          | item                            | get the item itemId                            |
-| indexOf      | inKey(gid/tid), inItems, inItem | get the item's index of the items              |
-| indexOfGroup | item                            | get the item's index of the group              |
-| contains     | item                            | check if the item is in the group              |
+| api          | args                      | description                                    |
+|--------------|---------------------------|------------------------------------------------|
+| add          | item                      | add an item to group                           |
+| remove       | item                      | remove an item from group                      |
+| toggleBy     | item, value               | toggle by the value [true: add; false: remove] |
+| toggle       | item                      | toggle the item                                |
+| gid          | item                      | get the item groupId                           |
+| tid          | item                      | get the item itemId                            |
+| indexOf      | key(gid/tid), items, item | get the item's index of the items              |
+| indexOfGroup | item                      | get the item's index of the group              |
+| contains     | item                      | check if the item is in the group              |
 
 ## usage:
 ```js
