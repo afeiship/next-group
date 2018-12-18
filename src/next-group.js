@@ -105,8 +105,10 @@
             if (!group.items.length) {
               this._groups.splice(gIdx, 1);
             }
+            return true;
           }
         }
+        return false;
       },
       toggleBy: function(inItem, inValue) {
         if (inValue) {
