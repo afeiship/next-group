@@ -7,7 +7,7 @@ npm install -S afeiship/next-group
 ```
 
 ## apis:
-| api          | args                      | description                                    |
+| Api          | Arguments                 | Description                                    |
 |--------------|---------------------------|------------------------------------------------|
 | add          | item                      | add an item to group                           |
 | remove       | item                      | remove an item from group                      |
