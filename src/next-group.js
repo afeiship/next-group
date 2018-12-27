@@ -25,7 +25,7 @@
           var groupMap = {};
           var self = this;
           nx.each(this._groups, function(_, group) {
-            groupMap[group.id] = group.items;
+            groupMap[group.id] = group;
             nx.each(group.items, function(__, item) {
               itemMap[self.tid(item)] = item;
             });
@@ -83,6 +83,21 @@
       },
       contains: function(inItem) {
         return this.indexOf('tid', this.items, inItem) > -1;
+      },
+      get: function(inGid) {
+        return this.maps.group[inGid];
+      },
+      set: function(inGid, inItem) {
+        this.maps.group[inGid] = inItem;
+      },
+      update: function(inGid, inObject) {
+        nx.each(
+          inObject,
+          function(key, value) {
+            this.get(inGid)[key] = value;
+          },
+          this
+        );
       },
       add: function(inItem) {
         if (!this.contains(inItem)) {

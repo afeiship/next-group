@@ -1,7 +1,7 @@
 var nx = require('next-js-core2');
 var NxGroup = require('../src/next-group');
 
-test('test data group api:remove', () => {
+test('test data group api:set/get/setItem/getItem', () => {
   var dataGroup = new NxGroup('sex', (item) => {
     return 'tid_' + item.name + '_' + item.sex;
   });
@@ -12,15 +12,14 @@ test('test data group api:remove', () => {
   dataGroup.add({ name: 'e', sex: 'male' });
   dataGroup.add({ name: 'f', sex: 'female' });
 
-  // before:
-  expect(dataGroup.maps.group.male.items.length).toBe(3);
-  expect(dataGroup.maps.group.female.items.length).toBe(3);
+  dataGroup.update('male', {
+    desc: 'woman group'
+  });
 
-  // remove an exsist:
-  dataGroup.remove({ name: 'b', sex: 'male' });
-  dataGroup.remove({ name: 'f', sex: 'female' });
+  dataGroup.update('female', {
+    desc: 'man group'
+  });
 
-  // after:
-  expect(dataGroup.maps.group.male.items.length).toBe(2);
-  expect(dataGroup.maps.group.female.items.length).toBe(2);
+  expect(dataGroup.maps.group.male.desc).toBe('woman group');
+  expect(dataGroup.maps.group.female.desc).toBe('man group');
 });
