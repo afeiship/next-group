@@ -134,6 +134,9 @@
       },
       toggle: function(inItem) {
         this.toggleBy(inItem, !this.contains(inItem));
+      },
+      serialize: function() {
+        return this._groups;
       }
     }
   });
